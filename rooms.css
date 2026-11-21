@@ -94,6 +94,10 @@ html[data-motion=off] *,html[data-motion=off] *::before,html[data-motion=off] *:
   padding:14px 18px;border:1px solid #cbb28c;border-radius:8px;background:linear-gradient(140deg,#fffaf078,#fff0d547);box-shadow:0 2px 4px #6a492b15;
 }
 .winter-phrase{display:flex;align-items:center;gap:12px}
+[data-room=fireside] .activity[data-step='0'] .winter-phrase {
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.25;
+}
 .winter-illustration{
   flex:none;width:68px;height:68px;display:grid;place-items:center;overflow:hidden;
   border-radius:8px;background:#ffdf63;

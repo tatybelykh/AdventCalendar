@@ -194,14 +194,17 @@ function lessonScreen(id, displayStage) {
     lesson.state = 'complete';
     const saved = flush();
     draw();
-    if (id === 2) {
-      collectButton.textContent = collectedLabel;
-      collectButton.disabled = true;
-    } else {
-      const count = completed(student).length;
-      panel(lessons[id-1][2],'Treasure collected',el('div',{class:'envelope'},item(id-1),p(count+' of '+student.goal+' treasures collected.'),
-        count>=student.goal && !student.prediction && p('Your gift is ready to open in the village.'),actions(button('Back to the village',app.close,{class:'primary'}))));
-    }
+    const count = completed(student).length;
+    panel(
+      lessons[id - 1][2],
+      'Treasure collected',
+      el('div', { class: 'envelope' },
+        item(id - 1),
+        p(count + ' of ' + student.goal + ' treasures collected.'),
+        count >= student.goal && !student.prediction && p('Your gift is ready to open in the village.'),
+        actions(button('Back to the village', app.close, { class: 'primary' })),
+      ),
+    );
     if (saved) playTreasureSound();
   }
   preparePanel(title,'Window '+id+' · '+student.level);
