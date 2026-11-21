@@ -94,7 +94,7 @@ html[data-motion=off] *,html[data-motion=off] *::before,html[data-motion=off] *:
   padding:14px 18px;border:1px solid #cbb28c;border-radius:8px;background:linear-gradient(140deg,#fffaf078,#fff0d547);box-shadow:0 2px 4px #6a492b15;
 }
 .winter-phrase{display:flex;align-items:center;gap:12px}
-[data-room=fireside] .activity[data-step='0'] .winter-phrase {
+[data-room=fireside] .activity:is([data-step='0'], [data-step='1']) .winter-phrase {
   font-size: clamp(20px, 2vw, 24px);
   line-height: 1.25;
 }
@@ -111,10 +111,10 @@ html[data-motion=off] *,html[data-motion=off] *::before,html[data-motion=off] *:
   grid-column:1/-1;padding:9px 13px;border:1px solid #cbb28c;border-radius:8px;background:#fff7e752;
   color:#412d20;
 }
-.winter-reasons h4{margin:0 0 6px;color:#591c24;font-size:17px;line-height:1.25}
+.winter-reasons h4{margin:0 0 6px;color:#591c24;font-size:20px;line-height:1.25}
 .winter-reasons-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 14px}
-.winter-reasons h5{margin:0 0 3px;color:#234738;font-size:15px;line-height:1.25}
-.winter-reasons ul{margin:0;padding-inline-start:17px;font-size:15px;line-height:1.35}
+.winter-reasons h5{margin:0 0 3px;color:#234738;font-size:17px;line-height:1.25}
+.winter-reasons ul{margin:0;padding-inline-start:17px;font-size:17px;line-height:1.35}
 .winter-reasons li+li{margin-top:2px}
 .sheet-body .winter-reasons{margin:0 0 12px}
 [data-room=fireside] .activity section{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
