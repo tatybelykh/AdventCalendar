@@ -1,0 +1,118 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#08152b" />
+    <meta name="description" content="Eight winter adventures for A2–B1 English lessons." />
+    <title>Your Advent Calendar</title>
+    <link rel="icon" type="image/png" href="./assets/bell.png" />
+    <link rel="stylesheet" href="./style.css?v=tasks-43" />
+    <link rel="stylesheet" href="./typography.css?v=indie-flower" />
+    <link rel="stylesheet" href="./rooms.css?v=cinema-youtube" />
+    <script type="module" src="./app.js?v=cinema-youtube"></script>
+  </head>
+  <body>
+    <main>
+      <div class="village-shell">
+        <header class="topbar">
+          <span class="brand"><span aria-hidden="true">✧</span> Your Advent Calendar</span>
+          <span class="top-line" aria-hidden="true">✦</span>
+          <div class="top-actions">
+            <button
+              id="music"
+              class="icon-button"
+              type="button"
+              aria-label="Music settings"
+              title="Music settings"
+            >
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 28 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 9h5l6-5v16l-6-5H2zM17 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14m3-17a14 14 0 0 1 0 20"
+                />
+              </svg>
+            </button>
+            <label class="student"
+              ><span class="sr-only">Student profile</span
+              ><select id="students"></select
+            ></label>
+            <button
+              id="add"
+              class="icon-button add-student"
+              type="button"
+              aria-label="Add student"
+              title="Add student"
+            >
+              +
+            </button>
+          </div>
+        </header>
+        <div class="hero">
+          <h1>A little winter magic</h1>
+          <p>Open a window. Discover a little joy.</p>
+        </div>
+        <p class="swipe" aria-hidden="true">← &nbsp; Swipe to explore the village &nbsp; →</p>
+        <div class="street-scroll">
+          <div class="street" id="street" role="group" aria-label="Eight advent windows">
+            <img
+              class="village-image"
+              src="./assets/village.png"
+              alt="Snowy village with four houses and lanterns"
+            />
+            <div class="snow" aria-hidden="true"></div>
+            <div id="windows"></div>
+          </div>
+        </div>
+        <div class="village-footer">
+          <section class="treasury" aria-labelledby="treasury-title">
+            <div class="treasury-label">
+              <h2 id="treasury-title">Your winter treasures</h2>
+              <span aria-hidden="true">❧ ✦ ❧</span>
+            </div>
+            <ul id="treasures" aria-label="Treasure collection"></ul>
+            <div class="progress">
+              <div id="progress" aria-live="polite"></div>
+              <label
+                ><span class="sr-only">Treasure goal</span
+                ><select id="goal">
+                  <option value="4">4 treasures · Cozy Journey</option>
+                  <option value="6">6 treasures · Winter Adventure</option>
+                </select></label
+              >
+            </div>
+          </section>
+          <button type="button" id="gift" class="gift">
+            <span class="item gift-art" style="--col: 0; --row: 2" aria-hidden="true"></span>
+            <span class="gift-copy"
+              ><strong>Your 2027 <br />prediction</strong><em id="gift-caption">A surprise is waiting</em
+              ><span aria-hidden="true">──── ✦ ────</span></span
+            >
+          </button>
+        </div>
+      </div>
+      <footer class="utility">
+        <button id="settings" type="button">Teacher settings</button
+        ><span id="save-status" role="status"></span>
+      </footer>
+    </main>
+    <dialog id="panel" aria-labelledby="panel-title"></dialog>
+    <template id="panel-frame">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow" id="panel-kicker"></p>
+          <h2 id="panel-title" tabindex="-1"></h2>
+        </div>
+        <button type="button" class="panel-close" aria-label="Close">×</button>
+      </div>
+      <div class="panel-body"></div>
+    </template>
+  </body>
+</html>
