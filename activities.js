@@ -71,10 +71,10 @@ function quiz(c, key, question, options, answer, explanation, {
   );
 }
 
-// Each rectangle is [x, y, width, height] on the Winter to do list poster.
-const winterCrops = [
+// Illustrations in chunk order, by image path or [x, y, width, height] on the winter poster.
+const winterIllustrations = [
   [45, 141, 217, 237],
-  [314, 821, 233, 181],
+  './assets/curl-up-with-a-good-book.webp',
   [247, 633, 168, 187],
   [258, 55, 202, 126],
   [793, 632, 230, 241],
@@ -83,19 +83,31 @@ const winterCrops = [
   [548, 1218, 284, 213],
 ];
 
-function winterPhrase(index, title) {
+function winterIllustration(index) {
+  const illustration = winterIllustrations[index];
+  if (typeof illustration === 'string') {
+    return el('img', {
+      src: illustration,
+      alt: '',
+      style: 'display:block;width:100%;height:100%;object-fit:cover',
+    });
+  }
+
   const posterWidth = 1112;
   const posterHeight = 1542;
-  const [x, y, width, height] = winterCrops[index];
+  const [x, y, width, height] = illustration;
   const side = Math.max(width, height);
-  const crop = el('span', { class: 'winter-crop', style: [
+  return el('span', { class: 'winter-crop', style: [
     'width:' + (100 * width / side) + '%',
     'height:' + (100 * height / side) + '%',
     'background-size:' + (100 * posterWidth / width) + '% ' + (100 * posterHeight / height) + '%',
     'background-position:' + (100 * x / (posterWidth - width)) + '% ' + (100 * y / (posterHeight - height)) + '%',
   ].join(';') });
+}
+
+function winterPhrase(index, title) {
   return el('span', { class: 'winter-phrase' },
-    el('span', { class: 'winter-illustration', 'aria-hidden': 'true' }, crop),
+    el('span', { class: 'winter-illustration', 'aria-hidden': 'true' }, winterIllustration(index)),
     title);
 }
 

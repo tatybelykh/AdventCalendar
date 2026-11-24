@@ -11,7 +11,7 @@ import {
   selectProfile,
 } from './profiles.js?v=teacher-name';
 import { beforeTheEnding, clips, lessons, speakingPrompts } from './lessons.js?v=tasks-47';
-import { activity, stages, pageCounts, pageUnits, roomThemes, winterReasons } from './activities.js?v=cinema-youtube';
+import { activity, stages, pageCounts, pageUnits, roomThemes, winterReasons } from './activities.js?v=winter-reading';
 import { playTreasureSound, setupAudio, stopMedia } from './audio.js?v=playback-9';
 import { musicPanel, profileForm, settings, teacherNameForm } from './admin.js?v=cinema-youtube';
 import { gift } from './gift.js?v=teacher-name';
